@@ -1,0 +1,119 @@
+<div class="container py-4">
+  <div class="d-flex align-items-center justify-content-between mb-3">
+    <h2 class="mb-0 fw-semibold">Add Business Card</h2>
+  </div>
+
+  <div class="card shadow-sm">
+    <div class="card-body">
+
+      <!-- Tabs -->
+      <ul class="nav nav-tabs mb-3">
+        <li class="nav-item">
+          <button class="nav-link" [class.active]="importTab()==='manual'" (click)="importTab.set('manual')">
+            Manual
+          </button>
+        </li>
+        <li class="nav-item">
+          <button class="nav-link" [class.active]="importTab()==='csv'" (click)="importTab.set('csv')">
+            Import CSV
+          </button>
+        </li>
+        <li class="nav-item">
+          <button class="nav-link" [class.active]="importTab()==='xml'" (click)="importTab.set('xml')">
+            Import XML
+          </button>
+        </li>
+      </ul>
+
+      <!-- Manual Form -->
+      <div *ngIf="importTab()==='manual'">
+        <form class="row g-3" (submit)="$event.preventDefault(); save()">
+          <div class="col-md-6">
+            <label class="form-label">Name</label>
+            <input class="form-control" [ngModel]="name()" (ngModelChange)="name.set($event)" name="name">
+          </div>
+          <div class="col-md-3">
+            <label class="form-label">Gender</label>
+            <select class="form-select" [ngModel]="gender()" (ngModelChange)="gender.set($event)" name="gender">
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+            </select>
+          </div>
+          <div class="col-md-3">
+            <label class="form-label">Date of Birth</label>
+            <input type="date" class="form-control" [ngModel]="dateOfBirth()" (ngModelChange)="dateOfBirth.set($event)" name="dob">
+          </div>
+
+          <div class="col-md-4">
+            <label class="form-label">Email</label>
+            <input class="form-control" [ngModel]="email()" (ngModelChange)="email.set($event)" name="email">
+          </div>
+          <div class="col-md-4">
+            <label class="form-label">Phone</label>
+            <input class="form-control" [ngModel]="phone()" (ngModelChange)="phone.set($event)" name="phone">
+          </div>
+          <div class="col-md-4">
+            <label class="form-label">Address</label>
+            <input class="form-control" [ngModel]="address()" (ngModelChange)="address.set($event)" name="address">
+          </div>
+
+          <!-- Drag & Drop Image -->
+          <div class="col-12">
+            <label class="form-label">Photo (Base64)</label>
+            <div class="border rounded p-4 text-center"
+                 [class.bg-light]="!isDragOver()"
+                 [class.bg-secondary-subtle]="isDragOver()"
+                 (dragover)="onDragOver($event)"
+                 (dragleave)="onDragLeave($event)"
+                 (drop)="onDrop($event)">
+              <div class="mb-2">Drag & Drop image here, or choose a file</div>
+              <input type="file" class="form-control" accept="image/*"
+                     #imgFile
+                     (change)="onImageSelected(imgFile.files?.[0] || null)">
+            </div>
+
+            <div class="mt-2" *ngIf="photoBase64()">
+              <div class="small text-muted">Size: {{photoSizeBytes()}} bytes</div>
+              <img [src]="'data:image/*;base64,'+photoBase64()"
+                   alt="preview"
+                   class="img-thumbnail"
+                   style="max-height:160px">
+            </div>
+          </div>
+
+          <div class="col-12 d-flex gap-2">
+            <button class="btn btn-primary" type="submit">Save</button>
+            <button class="btn btn-light" type="button" (click)="resetForm()">Reset</button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Import CSV -->
+      <div *ngIf="importTab()==='csv'">
+        <div class="mb-3">
+          <input type="file" class="form-control" accept=".csv"
+                 #csvFile
+                 (change)="onCsvChosen(csvFile.files?.[0] || null)">
+        </div>
+        <button class="btn btn-outline-primary" (click)="uploadCsv()">Upload CSV</button>
+        <div class="form-text mt-2">
+          Expected headers: Name, Gender, DateOfBirth(yyyy-MM-dd), Email, Phone, Address, PhotoBase64, PhotoSizeBytes
+        </div>
+      </div>
+
+      <!-- Import XML -->
+      <div *ngIf="importTab()==='xml'">
+        <div class="mb-3">
+          <input type="file" class="form-control" accept=".xml"
+                 #xmlFile
+                 (change)="onXmlChosen(xmlFile.files?.[0] || null)">
+        </div>
+        <button class="btn btn-outline-primary" (click)="uploadXml()">Upload XML</button>
+        <div class="form-text mt-2">
+          Root: &lt;BusinessCards&gt;&lt;BusinessCard&gt;...&lt;/BusinessCard&gt;...&lt;/BusinessCards&gt;
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,110 @@
+<div class="container py-4">
+  <div class="d-flex align-items-center justify-content-between mb-3">
+    <h2 class="mb-0 fw-semibold">Business Cards</h2>
+    <div class="btn-group">
+      <button class="btn btn-outline-secondary" (click)="exportCsv()">Export CSV</button>
+      <button class="btn btn-outline-secondary" (click)="exportXml()">Export XML</button>
+    </div>
+  </div>
+
+  <div class="card shadow-sm mb-3">
+    <div class="card-body">
+      <form class="row g-2 align-items-center" (submit)="$event.preventDefault(); goFirstPageAndLoad()">
+        <div class="col-12 col-md">
+          <input class="form-control"
+                 placeholder="Name"
+                 name="filter_name"
+                 [ngModel]="name()"
+                 (ngModelChange)="name.set($event)">
+        </div>
+
+        <div class="col-12 col-md">
+          <input class="form-control"
+                 placeholder="Email"
+                 name="filter_email"
+                 [ngModel]="email()"
+                 (ngModelChange)="email.set($event)">
+        </div>
+
+        <div class="col-12 col-md">
+          <input class="form-control"
+                 placeholder="Phone"
+                 name="filter_phone"
+                 [ngModel]="phone()"
+                 (ngModelChange)="phone.set($event)">
+        </div>
+
+        <div class="col-6 col-md">
+          <select class="form-select"
+                  name="filter_gender"
+                  [ngModel]="gender()"
+                  (ngModelChange)="gender.set($event)">
+            <option value="">Any Gender</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+          </select>
+        </div>
+
+        <div class="col-6 col-md">
+          <input class="form-control"
+                 type="date"
+                 name="filter_dob"
+                 [ngModel]="dateOfBirth()"
+                 (ngModelChange)="dateOfBirth.set($event)">
+        </div>
+
+        <div class="col-12 col-md-auto d-flex gap-2">
+          <button class="btn btn-primary" type="submit">Search</button>
+          <button class="btn btn-light" type="button" (click)="resetFilters()">Reset</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="card shadow-sm">
+    <div class="card-body">
+      <div *ngIf="loading()">Loading...</div>
+
+      <div class="table-responsive">
+        <table class="table table-sm align-middle">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Gender</th>
+              <th>DOB</th>
+              <th>Email</th>
+              <th>Phone</th>
+              <th>Address</th>
+              <th style="width:90px;">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let it of items()">
+              <td>{{ it.name }}</td>
+              <td>{{ genderText(it.gender) }}</td>
+              <td>{{ dateOnly(it.dateOfBirth) }}</td>
+              <td>{{ it.email }}</td>
+              <td>{{ it.phone }}</td>
+              <td>{{ it.address }}</td>
+              <td>
+                <button class="btn btn-sm btn-outline-danger" (click)="deleteItem(it.id)">Delete</button>
+              </td>
+            </tr>
+
+            <tr *ngIf="!items().length && !loading()">
+              <td colspan="7" class="text-center text-muted">No data</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="d-flex align-items-center justify-content-between">
+        <div>Page {{ pageNumber() }} of {{ totalPages() }}</div>
+        <div class="btn-group">
+          <button class="btn btn-light" (click)="prevPage()" [disabled]="pageNumber() <= 1">Prev</button>
+          <button class="btn btn-light" (click)="nextPage()" [disabled]="pageNumber() >= totalPages()">Next</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
