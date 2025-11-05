@@ -37,7 +37,7 @@ By default, the API runs at:
 ```bash
 cd business-cards-ui
 npm install
-ng serve -o
+ng serve -o --proxy-config proxy.conf.json
 ```
 
 Runs on:
@@ -99,38 +99,6 @@ Each filter performs partial search (`contains`) and can be combined with others
 
 ---
 
-## ⚡ Warning Fix (CS8602)
-
-If you encounter the compiler warning:
-
-```
-CS8602: Possible dereference of a null reference
-```
-
-✅ Solution in `ImportXmlService.cs`:
-```csharp
-if (env.Items == null)
-    return BadRequest("No items found in XML");
-
-foreach (var item in env.Items!)
-{
-    // process each item
-}
-```
-
-Or safely:
-```csharp
-foreach (var item in env.Items ?? [])
-{
-    ...
-}
-```
-
----
-
-## 🧰 Database (Optional)
-
-If you want to create and seed the table manually, use `Database/seed.sql`:
 
 ```sql
 CREATE TABLE BusinessCards (
@@ -165,15 +133,11 @@ dotnet test
 
 ---
 
-## 🖼️ Screenshot (Optional)
 
-![App Screenshot](screenshot.png)
-
----
 
 ## 🧾 GitHub Repository
 
-[👉 View on GitHub](https://github.com/USERNAME/BusinessCards)
+[👉 View on GitHub]([[https://github.com/USERNAME/BusinessCards](https://github.com/Esmaeelalmanaseer/BusinessCards)](https://github.com/Esmaeelalmanaseer/BusinessCards))
 
 ---
 
@@ -189,5 +153,5 @@ dotnet test
 ---
 
 ### 🧑‍💻 Author
-**Esmaeel Almawahra**  
+**Esmaeel Almanaseer**  
 Software Engineer — Full Stack (.NET + Angular)
