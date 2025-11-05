@@ -1,0 +1,481 @@
+2025-11-04 09:41:03.993 +03:00 [INF] Now listening on: https://localhost:7261
+2025-11-04 09:41:04.074 +03:00 [INF] Now listening on: http://localhost:5191
+2025-11-04 09:41:04.399 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-11-04 09:41:04.543 +03:00 [INF] Hosting environment: Development
+2025-11-04 09:41:04.554 +03:00 [INF] Content root path: C:\Task\BusinessCards\Api
+2025-11-04 09:41:09.809 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:7261/api/BusinessCards?pageNumber=1&pageSize=10 - null null
+2025-11-04 09:41:09.810 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7261/_framework/aspnetcore-browser-refresh.js - null null
+2025-11-04 09:41:10.132 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7261/_framework/aspnetcore-browser-refresh.js - 200 16491 application/javascript; charset=utf-8 529.5945ms
+2025-11-04 09:41:10.342 +03:00 [INF] Executing endpoint 'Api.Controllers.BusinessCardsController.GetAll (Api)'
+2025-11-04 09:41:10.579 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7261/_vs/browserLink - null null
+2025-11-04 09:41:10.621 +03:00 [INF] Route matched with {action = "GetAll", controller = "BusinessCards"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Domain.Helper.ApiResponse`1[Domain.Helper.Pagination`1[Application.DTOs.BusinessCardDto]]]] GetAll(Domain.Helper.BusinessCardParams) on controller Api.Controllers.BusinessCardsController (Api).
+2025-11-04 09:41:11.397 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7261/_vs/browserLink - 200 null text/javascript; charset=UTF-8 818.2147ms
+2025-11-04 09:41:11.455 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7261/swagger/v1/swagger.json - null null
+2025-11-04 09:41:11.632 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException: Failed to generate Operation for action - Api.Controllers.BusinessCardsController.ImportCsv (Api). See inner exception
+ ---> Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException: Error reading parameter(s) for action Api.Controllers.BusinessCardsController.ImportCsv (Api) as [FromForm] attribute used with IFormFile. Please refer to https://github.com/domaindrivendev/Swashbuckle.AspNetCore/tree/master/docs/configure-and-customize-swaggergen.md#handle-forms-and-file-uploads for more information
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateParametersAsync(ApiDescription apiDescription, SchemaRepository schemaRepository, Func`3 parameterGenerator)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateParametersAsync(ApiDescription apiDescription, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperationAsync(OpenApiDocument document, ApiDescription apiDescription, SchemaRepository schemaRepository, Func`3 parametersGenerator, Func`3 bodyGenerator, Func`3 applyFilters)
+   --- End of inner exception stack trace ---
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperationAsync(OpenApiDocument document, ApiDescription apiDescription, SchemaRepository schemaRepository, Func`3 parametersGenerator, Func`3 bodyGenerator, Func`3 applyFilters)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperationAsync(OpenApiDocument document, ApiDescription apiDescription, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperationsAsync(OpenApiDocument document, IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePathsAsync(OpenApiDocument document, IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository, Func`4 operationsGenerator)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePathsAsync(OpenApiDocument document, IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwaggerAsync(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-11-04 09:41:11.689 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7261/swagger/v1/swagger.json - 500 null text/plain; charset=utf-8 233.9659ms
+2025-11-04 09:41:18.236 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:7261/api/BusinessCards?pageNumber=1&pageSize=10 - null null
+2025-11-04 09:41:18.251 +03:00 [INF] Executing endpoint 'Api.Controllers.BusinessCardsController.GetAll (Api)'
+2025-11-04 09:41:18.257 +03:00 [INF] Route matched with {action = "GetAll", controller = "BusinessCards"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Domain.Helper.ApiResponse`1[Domain.Helper.Pagination`1[Application.DTOs.BusinessCardDto]]]] GetAll(Domain.Helper.BusinessCardParams) on controller Api.Controllers.BusinessCardsController (Api).
+2025-11-04 09:41:22.187 +03:00 [INF] Executed DbCommand (91ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [BusinessCards] AS [b]
+2025-11-04 09:41:22.187 +03:00 [INF] Executed DbCommand (91ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [BusinessCards] AS [b]
+2025-11-04 09:41:22.443 +03:00 [INF] Executed DbCommand (62ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[Address], [b].[DateOfBirth], [b].[Email], [b].[Gender], [b].[Name], [b].[Phone], [b].[PhotoBase64], [b].[PhotoSizeBytes]
+FROM [BusinessCards] AS [b]
+ORDER BY [b].[Name]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2025-11-04 09:41:22.443 +03:00 [INF] Executed DbCommand (66ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[Address], [b].[DateOfBirth], [b].[Email], [b].[Gender], [b].[Name], [b].[Phone], [b].[PhotoBase64], [b].[PhotoSizeBytes]
+FROM [BusinessCards] AS [b]
+ORDER BY [b].[Name]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2025-11-04 09:41:22.770 +03:00 [INF] Executing OkObjectResult, writing value of type 'Domain.Helper.ApiResponse`1[[Domain.Helper.Pagination`1[[Application.DTOs.BusinessCardDto, Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-11-04 09:41:22.770 +03:00 [INF] Executing OkObjectResult, writing value of type 'Domain.Helper.ApiResponse`1[[Domain.Helper.Pagination`1[[Application.DTOs.BusinessCardDto, Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-11-04 09:41:22.858 +03:00 [INF] Executed action Api.Controllers.BusinessCardsController.GetAll (Api) in 12036.4142ms
+2025-11-04 09:41:22.858 +03:00 [INF] Executed action Api.Controllers.BusinessCardsController.GetAll (Api) in 4587.0694ms
+2025-11-04 09:41:22.862 +03:00 [INF] Executed endpoint 'Api.Controllers.BusinessCardsController.GetAll (Api)'
+2025-11-04 09:41:22.863 +03:00 [INF] Executed endpoint 'Api.Controllers.BusinessCardsController.GetAll (Api)'
+2025-11-04 09:41:22.872 +03:00 [INF] HTTP GET /api/BusinessCards responded 200 in 4621.2051 ms
+2025-11-04 09:41:22.872 +03:00 [INF] HTTP GET /api/BusinessCards responded 200 in 12549.8815 ms
+2025-11-04 09:41:22.904 +03:00 [INF] Request finished HTTP/1.1 GET https://localhost:7261/api/BusinessCards?pageNumber=1&pageSize=10 - 200 null application/json; charset=utf-8 4668.4643ms
+2025-11-04 09:41:22.904 +03:00 [INF] Request finished HTTP/1.1 GET https://localhost:7261/api/BusinessCards?pageNumber=1&pageSize=10 - 200 null application/json; charset=utf-8 13139.6192ms
+2025-11-04 09:41:30.136 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:7261/api/BusinessCards?pageNumber=2&pageSize=10 - null null
+2025-11-04 09:41:30.161 +03:00 [INF] Executing endpoint 'Api.Controllers.BusinessCardsController.GetAll (Api)'
+2025-11-04 09:41:30.169 +03:00 [INF] Route matched with {action = "GetAll", controller = "BusinessCards"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Domain.Helper.ApiResponse`1[Domain.Helper.Pagination`1[Application.DTOs.BusinessCardDto]]]] GetAll(Domain.Helper.BusinessCardParams) on controller Api.Controllers.BusinessCardsController (Api).
+2025-11-04 09:41:31.885 +03:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [BusinessCards] AS [b]
+2025-11-04 09:41:31.918 +03:00 [INF] Executed DbCommand (13ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[Address], [b].[DateOfBirth], [b].[Email], [b].[Gender], [b].[Name], [b].[Phone], [b].[PhotoBase64], [b].[PhotoSizeBytes]
+FROM [BusinessCards] AS [b]
+ORDER BY [b].[Name]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_0 ROWS ONLY
+2025-11-04 09:41:31.924 +03:00 [INF] Executing OkObjectResult, writing value of type 'Domain.Helper.ApiResponse`1[[Domain.Helper.Pagination`1[[Application.DTOs.BusinessCardDto, Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-11-04 09:41:31.930 +03:00 [INF] Executed action Api.Controllers.BusinessCardsController.GetAll (Api) in 1746.4271ms
+2025-11-04 09:41:31.936 +03:00 [INF] Executed endpoint 'Api.Controllers.BusinessCardsController.GetAll (Api)'
+2025-11-04 09:41:31.938 +03:00 [INF] HTTP GET /api/BusinessCards responded 200 in 1777.8655 ms
+2025-11-04 09:41:31.948 +03:00 [INF] Request finished HTTP/1.1 GET https://localhost:7261/api/BusinessCards?pageNumber=2&pageSize=10 - 200 null application/json; charset=utf-8 1812.5882ms
+2025-11-04 09:41:33.835 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:7261/api/BusinessCards?pageNumber=1&pageSize=10 - null null
+2025-11-04 09:41:34.035 +03:00 [INF] Executing endpoint 'Api.Controllers.BusinessCardsController.GetAll (Api)'
+2025-11-04 09:41:34.040 +03:00 [INF] Route matched with {action = "GetAll", controller = "BusinessCards"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Domain.Helper.ApiResponse`1[Domain.Helper.Pagination`1[Application.DTOs.BusinessCardDto]]]] GetAll(Domain.Helper.BusinessCardParams) on controller Api.Controllers.BusinessCardsController (Api).
+2025-11-04 09:41:35.527 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [BusinessCards] AS [b]
+2025-11-04 09:41:35.545 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[Address], [b].[DateOfBirth], [b].[Email], [b].[Gender], [b].[Name], [b].[Phone], [b].[PhotoBase64], [b].[PhotoSizeBytes]
+FROM [BusinessCards] AS [b]
+ORDER BY [b].[Name]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2025-11-04 09:41:35.557 +03:00 [INF] Executing OkObjectResult, writing value of type 'Domain.Helper.ApiResponse`1[[Domain.Helper.Pagination`1[[Application.DTOs.BusinessCardDto, Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-11-04 09:41:35.564 +03:00 [INF] Executed action Api.Controllers.BusinessCardsController.GetAll (Api) in 1515.3838ms
+2025-11-04 09:41:35.568 +03:00 [INF] Executed endpoint 'Api.Controllers.BusinessCardsController.GetAll (Api)'
+2025-11-04 09:41:35.571 +03:00 [INF] HTTP GET /api/BusinessCards responded 200 in 1536.2696 ms
+2025-11-04 09:41:35.580 +03:00 [INF] Request finished HTTP/1.1 GET https://localhost:7261/api/BusinessCards?pageNumber=1&pageSize=10 - 200 null application/json; charset=utf-8 1745.6518ms
+2025-11-04 09:41:46.384 +03:00 [INF] Request starting HTTP/1.1 POST https://localhost:7261/api/BusinessCards/import/csv - multipart/form-data; boundary=----WebKitFormBoundarydxuS6mI9exOuEadA 408
+2025-11-04 09:41:46.430 +03:00 [INF] Executing endpoint 'Api.Controllers.BusinessCardsController.ImportCsv (Api)'
+2025-11-04 09:41:46.473 +03:00 [INF] Route matched with {action = "ImportCsv", controller = "BusinessCards"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Domain.Helper.ApiResponse`1[System.Int32]]] ImportCsv(Microsoft.AspNetCore.Http.IFormFile) on controller Api.Controllers.BusinessCardsController (Api).
+2025-11-04 09:42:09.501 +03:00 [INF] Executed DbCommand (54ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 500), @p2='?' (DbType = DateTime2), @p3='?' (Size = 200), @p4='?' (DbType = Int32), @p5='?' (Size = 200), @p6='?' (Size = 50), @p7='?' (Size = 4000), @p8='?' (DbType = Int32), @p9='?' (DbType = Guid), @p10='?' (Size = 500), @p11='?' (DbType = DateTime2), @p12='?' (Size = 200), @p13='?' (DbType = Int32), @p14='?' (Size = 200), @p15='?' (Size = 50), @p16='?' (Size = 4000), @p17='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [BusinessCards] ([Id], [Address], [DateOfBirth], [Email], [Gender], [Name], [Phone], [PhotoBase64], [PhotoSizeBytes])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8),
+(@p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17);
+2025-11-04 09:42:15.158 +03:00 [INF] Executing OkObjectResult, writing value of type 'Domain.Helper.ApiResponse`1[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-11-04 09:42:16.070 +03:00 [INF] Executed action Api.Controllers.BusinessCardsController.ImportCsv (Api) in 29557.2273ms
+2025-11-04 09:42:16.077 +03:00 [INF] Executed endpoint 'Api.Controllers.BusinessCardsController.ImportCsv (Api)'
+2025-11-04 09:42:16.082 +03:00 [INF] HTTP POST /api/BusinessCards/import/csv responded 200 in 29652.5310 ms
+2025-11-04 09:42:16.093 +03:00 [INF] Request finished HTTP/1.1 POST https://localhost:7261/api/BusinessCards/import/csv - 200 null application/json; charset=utf-8 29708.9436ms
+2025-11-04 09:42:24.692 +03:00 [INF] Request starting HTTP/1.1 POST https://localhost:7261/api/BusinessCards/import/csv - multipart/form-data; boundary=----WebKitFormBoundarycjbwt8keZJghqj18 408
+2025-11-04 09:42:24.720 +03:00 [INF] Executing endpoint 'Api.Controllers.BusinessCardsController.ImportCsv (Api)'
+2025-11-04 09:42:24.729 +03:00 [INF] Route matched with {action = "ImportCsv", controller = "BusinessCards"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Domain.Helper.ApiResponse`1[System.Int32]]] ImportCsv(Microsoft.AspNetCore.Http.IFormFile) on controller Api.Controllers.BusinessCardsController (Api).
+2025-11-04 09:43:20.227 +03:00 [INF] Executed DbCommand (24ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 500), @p2='?' (DbType = DateTime2), @p3='?' (Size = 200), @p4='?' (DbType = Int32), @p5='?' (Size = 200), @p6='?' (Size = 50), @p7='?' (Size = 4000), @p8='?' (DbType = Int32), @p9='?' (DbType = Guid), @p10='?' (Size = 500), @p11='?' (DbType = DateTime2), @p12='?' (Size = 200), @p13='?' (DbType = Int32), @p14='?' (Size = 200), @p15='?' (Size = 50), @p16='?' (Size = 4000), @p17='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [BusinessCards] ([Id], [Address], [DateOfBirth], [Email], [Gender], [Name], [Phone], [PhotoBase64], [PhotoSizeBytes])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8),
+(@p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17);
+2025-11-04 09:43:33.643 +03:00 [INF] Executing OkObjectResult, writing value of type 'Domain.Helper.ApiResponse`1[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-11-04 09:43:33.683 +03:00 [INF] Executed action Api.Controllers.BusinessCardsController.ImportCsv (Api) in 68940.6886ms
+2025-11-04 09:43:33.693 +03:00 [INF] Executed endpoint 'Api.Controllers.BusinessCardsController.ImportCsv (Api)'
+2025-11-04 09:43:33.701 +03:00 [INF] HTTP POST /api/BusinessCards/import/csv responded 200 in 68983.2167 ms
+2025-11-04 09:43:33.705 +03:00 [INF] Request finished HTTP/1.1 POST https://localhost:7261/api/BusinessCards/import/csv - 200 null application/json; charset=utf-8 69013.4606ms
+2025-11-04 09:43:40.516 +03:00 [INF] Request starting HTTP/1.1 POST https://localhost:7261/api/BusinessCards/import/xml - multipart/form-data; boundary=----WebKitFormBoundaryGTkB3PR1g8GdqLxq 758
+2025-11-04 09:43:40.533 +03:00 [INF] Executing endpoint 'Api.Controllers.BusinessCardsController.ImportXml (Api)'
+2025-11-04 09:43:40.549 +03:00 [INF] Route matched with {action = "ImportXml", controller = "BusinessCards"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Domain.Helper.ApiResponse`1[System.Int32]]] ImportXml(Microsoft.AspNetCore.Http.IFormFile) on controller Api.Controllers.BusinessCardsController (Api).
+2025-11-04 09:44:18.718 +03:00 [INF] Executed DbCommand (39ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 500), @p2='?' (DbType = DateTime2), @p3='?' (Size = 200), @p4='?' (DbType = Int32), @p5='?' (Size = 200), @p6='?' (Size = 50), @p7='?' (Size = 4000), @p8='?' (DbType = Int32), @p9='?' (DbType = Guid), @p10='?' (Size = 500), @p11='?' (DbType = DateTime2), @p12='?' (Size = 200), @p13='?' (DbType = Int32), @p14='?' (Size = 200), @p15='?' (Size = 50), @p16='?' (Size = 4000), @p17='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [BusinessCards] ([Id], [Address], [DateOfBirth], [Email], [Gender], [Name], [Phone], [PhotoBase64], [PhotoSizeBytes])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8),
+(@p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17);
+2025-11-04 09:44:22.404 +03:00 [INF] Executing OkObjectResult, writing value of type 'Domain.Helper.ApiResponse`1[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-11-04 09:44:23.117 +03:00 [INF] Executed action Api.Controllers.BusinessCardsController.ImportXml (Api) in 42555.3238ms
+2025-11-04 09:44:23.129 +03:00 [INF] Executed endpoint 'Api.Controllers.BusinessCardsController.ImportXml (Api)'
+2025-11-04 09:44:23.132 +03:00 [INF] HTTP POST /api/BusinessCards/import/xml responded 200 in 42600.3611 ms
+2025-11-04 09:44:23.138 +03:00 [INF] Request finished HTTP/1.1 POST https://localhost:7261/api/BusinessCards/import/xml - 200 null application/json; charset=utf-8 42621.8895ms
+2025-11-04 09:44:34.592 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:7261/api/BusinessCards?pageNumber=1&pageSize=10 - null null
+2025-11-04 09:44:34.608 +03:00 [INF] Executing endpoint 'Api.Controllers.BusinessCardsController.GetAll (Api)'
+2025-11-04 09:44:34.615 +03:00 [INF] Route matched with {action = "GetAll", controller = "BusinessCards"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Domain.Helper.ApiResponse`1[Domain.Helper.Pagination`1[Application.DTOs.BusinessCardDto]]]] GetAll(Domain.Helper.BusinessCardParams) on controller Api.Controllers.BusinessCardsController (Api).
+2025-11-04 09:44:36.404 +03:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [BusinessCards] AS [b]
+2025-11-04 09:44:36.420 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[Address], [b].[DateOfBirth], [b].[Email], [b].[Gender], [b].[Name], [b].[Phone], [b].[PhotoBase64], [b].[PhotoSizeBytes]
+FROM [BusinessCards] AS [b]
+ORDER BY [b].[Name]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2025-11-04 09:44:36.444 +03:00 [INF] Executing OkObjectResult, writing value of type 'Domain.Helper.ApiResponse`1[[Domain.Helper.Pagination`1[[Application.DTOs.BusinessCardDto, Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-11-04 09:44:36.452 +03:00 [INF] Executed action Api.Controllers.BusinessCardsController.GetAll (Api) in 1820.7011ms
+2025-11-04 09:44:36.461 +03:00 [INF] Executed endpoint 'Api.Controllers.BusinessCardsController.GetAll (Api)'
+2025-11-04 09:44:36.462 +03:00 [INF] HTTP GET /api/BusinessCards responded 200 in 1854.3922 ms
+2025-11-04 09:44:36.471 +03:00 [INF] Request finished HTTP/1.1 GET https://localhost:7261/api/BusinessCards?pageNumber=1&pageSize=10 - 200 null application/json; charset=utf-8 1878.9693ms
+2025-11-04 09:44:41.399 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:7261/api/BusinessCards?pageNumber=2&pageSize=10 - null null
+2025-11-04 09:44:41.423 +03:00 [INF] Executing endpoint 'Api.Controllers.BusinessCardsController.GetAll (Api)'
+2025-11-04 09:44:41.428 +03:00 [INF] Route matched with {action = "GetAll", controller = "BusinessCards"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Domain.Helper.ApiResponse`1[Domain.Helper.Pagination`1[Application.DTOs.BusinessCardDto]]]] GetAll(Domain.Helper.BusinessCardParams) on controller Api.Controllers.BusinessCardsController (Api).
+2025-11-04 09:44:42.919 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [BusinessCards] AS [b]
+2025-11-04 09:44:42.943 +03:00 [INF] Executed DbCommand (6ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[Address], [b].[DateOfBirth], [b].[Email], [b].[Gender], [b].[Name], [b].[Phone], [b].[PhotoBase64], [b].[PhotoSizeBytes]
+FROM [BusinessCards] AS [b]
+ORDER BY [b].[Name]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_0 ROWS ONLY
+2025-11-04 09:44:42.955 +03:00 [INF] Executing OkObjectResult, writing value of type 'Domain.Helper.ApiResponse`1[[Domain.Helper.Pagination`1[[Application.DTOs.BusinessCardDto, Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-11-04 09:44:42.962 +03:00 [INF] Executed action Api.Controllers.BusinessCardsController.GetAll (Api) in 1526.0858ms
+2025-11-04 09:44:42.969 +03:00 [INF] Executed endpoint 'Api.Controllers.BusinessCardsController.GetAll (Api)'
+2025-11-04 09:44:42.974 +03:00 [INF] HTTP GET /api/BusinessCards responded 200 in 1551.1680 ms
+2025-11-04 09:44:43.048 +03:00 [INF] Request finished HTTP/1.1 GET https://localhost:7261/api/BusinessCards?pageNumber=2&pageSize=10 - 200 null application/json; charset=utf-8 1649.5042ms
+2025-11-04 09:44:47.762 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:7261/api/BusinessCards?pageNumber=1&pageSize=10 - null null
+2025-11-04 09:44:47.772 +03:00 [INF] Executing endpoint 'Api.Controllers.BusinessCardsController.GetAll (Api)'
+2025-11-04 09:44:47.778 +03:00 [INF] Route matched with {action = "GetAll", controller = "BusinessCards"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Domain.Helper.ApiResponse`1[Domain.Helper.Pagination`1[Application.DTOs.BusinessCardDto]]]] GetAll(Domain.Helper.BusinessCardParams) on controller Api.Controllers.BusinessCardsController (Api).
+2025-11-04 09:44:50.244 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [BusinessCards] AS [b]
+2025-11-04 09:44:50.264 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[Address], [b].[DateOfBirth], [b].[Email], [b].[Gender], [b].[Name], [b].[Phone], [b].[PhotoBase64], [b].[PhotoSizeBytes]
+FROM [BusinessCards] AS [b]
+ORDER BY [b].[Name]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2025-11-04 09:44:50.276 +03:00 [INF] Executing OkObjectResult, writing value of type 'Domain.Helper.ApiResponse`1[[Domain.Helper.Pagination`1[[Application.DTOs.BusinessCardDto, Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-11-04 09:44:50.284 +03:00 [INF] Executed action Api.Controllers.BusinessCardsController.GetAll (Api) in 2497.7447ms
+2025-11-04 09:44:50.292 +03:00 [INF] Executed endpoint 'Api.Controllers.BusinessCardsController.GetAll (Api)'
+2025-11-04 09:44:50.298 +03:00 [INF] HTTP GET /api/BusinessCards responded 200 in 2526.0261 ms
+2025-11-04 09:44:50.306 +03:00 [INF] Request finished HTTP/1.1 GET https://localhost:7261/api/BusinessCards?pageNumber=1&pageSize=10 - 200 null application/json; charset=utf-8 2543.6853ms
+2025-11-04 09:44:58.748 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:7261/api/BusinessCards?pageNumber=1&pageSize=10&gender=Male - null null
+2025-11-04 09:44:58.761 +03:00 [INF] Executing endpoint 'Api.Controllers.BusinessCardsController.GetAll (Api)'
+2025-11-04 09:44:58.767 +03:00 [INF] Route matched with {action = "GetAll", controller = "BusinessCards"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Domain.Helper.ApiResponse`1[Domain.Helper.Pagination`1[Application.DTOs.BusinessCardDto]]]] GetAll(Domain.Helper.BusinessCardParams) on controller Api.Controllers.BusinessCardsController (Api).
+2025-11-04 09:45:00.191 +03:00 [INF] Executed DbCommand (13ms) [Parameters=[@__p_gender_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [BusinessCards] AS [b]
+WHERE [b].[Gender] = @__p_gender_0
+2025-11-04 09:45:00.218 +03:00 [INF] Executed DbCommand (10ms) [Parameters=[@__p_gender_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32), @__p_2='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[Address], [b].[DateOfBirth], [b].[Email], [b].[Gender], [b].[Name], [b].[Phone], [b].[PhotoBase64], [b].[PhotoSizeBytes]
+FROM [BusinessCards] AS [b]
+WHERE [b].[Gender] = @__p_gender_0
+ORDER BY [b].[Name]
+OFFSET @__p_1 ROWS FETCH NEXT @__p_2 ROWS ONLY
+2025-11-04 09:45:00.236 +03:00 [INF] Executing OkObjectResult, writing value of type 'Domain.Helper.ApiResponse`1[[Domain.Helper.Pagination`1[[Application.DTOs.BusinessCardDto, Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-11-04 09:45:00.249 +03:00 [INF] Executed action Api.Controllers.BusinessCardsController.GetAll (Api) in 1473.3163ms
+2025-11-04 09:45:00.266 +03:00 [INF] Executed endpoint 'Api.Controllers.BusinessCardsController.GetAll (Api)'
+2025-11-04 09:45:00.275 +03:00 [INF] HTTP GET /api/BusinessCards responded 200 in 1513.9476 ms
+2025-11-04 09:45:00.287 +03:00 [INF] Request finished HTTP/1.1 GET https://localhost:7261/api/BusinessCards?pageNumber=1&pageSize=10&gender=Male - 200 null application/json; charset=utf-8 1539.7255ms
+2025-11-04 09:45:04.754 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:7261/api/BusinessCards?pageNumber=1&pageSize=10&gender=Female - null null
+2025-11-04 09:45:04.777 +03:00 [INF] Executing endpoint 'Api.Controllers.BusinessCardsController.GetAll (Api)'
+2025-11-04 09:45:04.788 +03:00 [INF] Route matched with {action = "GetAll", controller = "BusinessCards"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Domain.Helper.ApiResponse`1[Domain.Helper.Pagination`1[Application.DTOs.BusinessCardDto]]]] GetAll(Domain.Helper.BusinessCardParams) on controller Api.Controllers.BusinessCardsController (Api).
+2025-11-04 09:45:06.163 +03:00 [INF] Executed DbCommand (70ms) [Parameters=[@__p_gender_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [BusinessCards] AS [b]
+WHERE [b].[Gender] = @__p_gender_0
+2025-11-04 09:45:06.180 +03:00 [INF] Executed DbCommand (7ms) [Parameters=[@__p_gender_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32), @__p_2='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[Address], [b].[DateOfBirth], [b].[Email], [b].[Gender], [b].[Name], [b].[Phone], [b].[PhotoBase64], [b].[PhotoSizeBytes]
+FROM [BusinessCards] AS [b]
+WHERE [b].[Gender] = @__p_gender_0
+ORDER BY [b].[Name]
+OFFSET @__p_1 ROWS FETCH NEXT @__p_2 ROWS ONLY
+2025-11-04 09:45:06.192 +03:00 [INF] Executing OkObjectResult, writing value of type 'Domain.Helper.ApiResponse`1[[Domain.Helper.Pagination`1[[Application.DTOs.BusinessCardDto, Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-11-04 09:45:06.204 +03:00 [INF] Executed action Api.Controllers.BusinessCardsController.GetAll (Api) in 1404.6062ms
+2025-11-04 09:45:06.209 +03:00 [INF] Executed endpoint 'Api.Controllers.BusinessCardsController.GetAll (Api)'
+2025-11-04 09:45:06.215 +03:00 [INF] HTTP GET /api/BusinessCards responded 200 in 1437.7496 ms
+2025-11-04 09:45:06.323 +03:00 [INF] Request finished HTTP/1.1 GET https://localhost:7261/api/BusinessCards?pageNumber=1&pageSize=10&gender=Female - 200 null application/json; charset=utf-8 1568.4353ms
+2025-11-04 09:45:49.164 +03:00 [INF] Request starting HTTP/1.1 POST https://localhost:7261/api/BusinessCards/import/csv - multipart/form-data; boundary=----WebKitFormBoundary2vJdvsgE35mJe2MY 408
+2025-11-04 09:45:49.181 +03:00 [INF] Executing endpoint 'Api.Controllers.BusinessCardsController.ImportCsv (Api)'
+2025-11-04 09:45:49.187 +03:00 [INF] Route matched with {action = "ImportCsv", controller = "BusinessCards"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Domain.Helper.ApiResponse`1[System.Int32]]] ImportCsv(Microsoft.AspNetCore.Http.IFormFile) on controller Api.Controllers.BusinessCardsController (Api).
+2025-11-04 09:46:48.375 +03:00 [INF] Executed DbCommand (37ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 500), @p2='?' (DbType = DateTime2), @p3='?' (Size = 200), @p4='?' (DbType = Int32), @p5='?' (Size = 200), @p6='?' (Size = 50), @p7='?' (Size = 4000), @p8='?' (DbType = Int32), @p9='?' (DbType = Guid), @p10='?' (Size = 500), @p11='?' (DbType = DateTime2), @p12='?' (Size = 200), @p13='?' (DbType = Int32), @p14='?' (Size = 200), @p15='?' (Size = 50), @p16='?' (Size = 4000), @p17='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [BusinessCards] ([Id], [Address], [DateOfBirth], [Email], [Gender], [Name], [Phone], [PhotoBase64], [PhotoSizeBytes])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8),
+(@p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17);
+2025-11-04 09:46:50.093 +03:00 [INF] Executing OkObjectResult, writing value of type 'Domain.Helper.ApiResponse`1[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-11-04 09:46:50.096 +03:00 [INF] Executed action Api.Controllers.BusinessCardsController.ImportCsv (Api) in 60900.9765ms
+2025-11-04 09:46:50.100 +03:00 [INF] Executed endpoint 'Api.Controllers.BusinessCardsController.ImportCsv (Api)'
+2025-11-04 09:46:50.106 +03:00 [INF] HTTP POST /api/BusinessCards/import/csv responded 200 in 60925.7641 ms
+2025-11-04 09:46:50.112 +03:00 [INF] Request finished HTTP/1.1 POST https://localhost:7261/api/BusinessCards/import/csv - 200 null application/json; charset=utf-8 60947.9758ms
+2025-11-04 09:46:54.501 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:7261/api/BusinessCards?pageNumber=1&pageSize=10 - null null
+2025-11-04 09:46:54.513 +03:00 [INF] Executing endpoint 'Api.Controllers.BusinessCardsController.GetAll (Api)'
+2025-11-04 09:46:54.521 +03:00 [INF] Route matched with {action = "GetAll", controller = "BusinessCards"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Domain.Helper.ApiResponse`1[Domain.Helper.Pagination`1[Application.DTOs.BusinessCardDto]]]] GetAll(Domain.Helper.BusinessCardParams) on controller Api.Controllers.BusinessCardsController (Api).
+2025-11-04 09:46:56.033 +03:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [BusinessCards] AS [b]
+2025-11-04 09:46:56.058 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[Address], [b].[DateOfBirth], [b].[Email], [b].[Gender], [b].[Name], [b].[Phone], [b].[PhotoBase64], [b].[PhotoSizeBytes]
+FROM [BusinessCards] AS [b]
+ORDER BY [b].[Name]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2025-11-04 09:46:56.069 +03:00 [INF] Executing OkObjectResult, writing value of type 'Domain.Helper.ApiResponse`1[[Domain.Helper.Pagination`1[[Application.DTOs.BusinessCardDto, Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-11-04 09:46:56.075 +03:00 [INF] Executed action Api.Controllers.BusinessCardsController.GetAll (Api) in 1544.0739ms
+2025-11-04 09:46:56.080 +03:00 [INF] Executed endpoint 'Api.Controllers.BusinessCardsController.GetAll (Api)'
+2025-11-04 09:46:56.089 +03:00 [INF] HTTP GET /api/BusinessCards responded 200 in 1576.4093 ms
+2025-11-04 09:46:56.095 +03:00 [INF] Request finished HTTP/1.1 GET https://localhost:7261/api/BusinessCards?pageNumber=1&pageSize=10 - 200 null application/json; charset=utf-8 1594.3349ms
+2025-11-04 09:48:18.283 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:7261/api/BusinessCards?pageNumber=1&pageSize=10 - null null
+2025-11-04 09:48:18.293 +03:00 [INF] Executing endpoint 'Api.Controllers.BusinessCardsController.GetAll (Api)'
+2025-11-04 09:48:18.296 +03:00 [INF] Route matched with {action = "GetAll", controller = "BusinessCards"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Domain.Helper.ApiResponse`1[Domain.Helper.Pagination`1[Application.DTOs.BusinessCardDto]]]] GetAll(Domain.Helper.BusinessCardParams) on controller Api.Controllers.BusinessCardsController (Api).
+2025-11-04 09:48:19.760 +03:00 [INF] Executed DbCommand (42ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [BusinessCards] AS [b]
+2025-11-04 09:48:19.770 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[Address], [b].[DateOfBirth], [b].[Email], [b].[Gender], [b].[Name], [b].[Phone], [b].[PhotoBase64], [b].[PhotoSizeBytes]
+FROM [BusinessCards] AS [b]
+ORDER BY [b].[Name]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2025-11-04 09:48:19.775 +03:00 [INF] Executing OkObjectResult, writing value of type 'Domain.Helper.ApiResponse`1[[Domain.Helper.Pagination`1[[Application.DTOs.BusinessCardDto, Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-11-04 09:48:19.779 +03:00 [INF] Executed action Api.Controllers.BusinessCardsController.GetAll (Api) in 1478.3155ms
+2025-11-04 09:48:19.782 +03:00 [INF] Executed endpoint 'Api.Controllers.BusinessCardsController.GetAll (Api)'
+2025-11-04 09:48:19.785 +03:00 [INF] HTTP GET /api/BusinessCards responded 200 in 1492.0571 ms
+2025-11-04 09:48:19.790 +03:00 [INF] Request finished HTTP/1.1 GET https://localhost:7261/api/BusinessCards?pageNumber=1&pageSize=10 - 200 null application/json; charset=utf-8 1507.3392ms
+2025-11-04 09:48:25.719 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:7261/api/BusinessCards?pageNumber=1&pageSize=10 - null null
+2025-11-04 09:48:26.203 +03:00 [INF] Executing endpoint 'Api.Controllers.BusinessCardsController.GetAll (Api)'
+2025-11-04 09:48:26.209 +03:00 [INF] Route matched with {action = "GetAll", controller = "BusinessCards"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Domain.Helper.ApiResponse`1[Domain.Helper.Pagination`1[Application.DTOs.BusinessCardDto]]]] GetAll(Domain.Helper.BusinessCardParams) on controller Api.Controllers.BusinessCardsController (Api).
+2025-11-04 09:48:28.204 +03:00 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [BusinessCards] AS [b]
+2025-11-04 09:48:28.211 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[Address], [b].[DateOfBirth], [b].[Email], [b].[Gender], [b].[Name], [b].[Phone], [b].[PhotoBase64], [b].[PhotoSizeBytes]
+FROM [BusinessCards] AS [b]
+ORDER BY [b].[Name]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2025-11-04 09:48:28.217 +03:00 [INF] Executing OkObjectResult, writing value of type 'Domain.Helper.ApiResponse`1[[Domain.Helper.Pagination`1[[Application.DTOs.BusinessCardDto, Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-11-04 09:48:28.219 +03:00 [INF] Executed action Api.Controllers.BusinessCardsController.GetAll (Api) in 2005.9192ms
+2025-11-04 09:48:28.222 +03:00 [INF] Executed endpoint 'Api.Controllers.BusinessCardsController.GetAll (Api)'
+2025-11-04 09:48:28.225 +03:00 [INF] HTTP GET /api/BusinessCards responded 200 in 2024.9492 ms
+2025-11-04 09:48:28.229 +03:00 [INF] Request finished HTTP/1.1 GET https://localhost:7261/api/BusinessCards?pageNumber=1&pageSize=10 - 200 null application/json; charset=utf-8 2510.9277ms
+2025-11-04 09:51:33.665 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:7261/api/BusinessCards?pageNumber=1&pageSize=10 - null null
+2025-11-04 09:51:33.681 +03:00 [INF] Executing endpoint 'Api.Controllers.BusinessCardsController.GetAll (Api)'
+2025-11-04 09:51:33.697 +03:00 [INF] Route matched with {action = "GetAll", controller = "BusinessCards"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Domain.Helper.ApiResponse`1[Domain.Helper.Pagination`1[Application.DTOs.BusinessCardDto]]]] GetAll(Domain.Helper.BusinessCardParams) on controller Api.Controllers.BusinessCardsController (Api).
+2025-11-04 09:51:35.877 +03:00 [INF] Executed DbCommand (32ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [BusinessCards] AS [b]
+2025-11-04 09:51:35.884 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[Address], [b].[DateOfBirth], [b].[Email], [b].[Gender], [b].[Name], [b].[Phone], [b].[PhotoBase64], [b].[PhotoSizeBytes]
+FROM [BusinessCards] AS [b]
+ORDER BY [b].[Name]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2025-11-04 09:51:37.180 +03:00 [INF] Executing OkObjectResult, writing value of type 'Domain.Helper.ApiResponse`1[[Domain.Helper.Pagination`1[[Application.DTOs.BusinessCardDto, Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-11-04 09:51:37.190 +03:00 [INF] Executed action Api.Controllers.BusinessCardsController.GetAll (Api) in 3475.2543ms
+2025-11-04 09:51:37.195 +03:00 [INF] Executed endpoint 'Api.Controllers.BusinessCardsController.GetAll (Api)'
+2025-11-04 09:51:37.203 +03:00 [INF] HTTP GET /api/BusinessCards responded 200 in 3521.9146 ms
+2025-11-04 09:51:37.213 +03:00 [INF] Request finished HTTP/1.1 GET https://localhost:7261/api/BusinessCards?pageNumber=1&pageSize=10 - 200 null application/json; charset=utf-8 3548.5335ms
+2025-11-04 09:51:45.896 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:7261/api/BusinessCards?pageNumber=2&pageSize=10 - null null
+2025-11-04 09:51:45.911 +03:00 [INF] Executing endpoint 'Api.Controllers.BusinessCardsController.GetAll (Api)'
+2025-11-04 09:51:46.007 +03:00 [INF] Route matched with {action = "GetAll", controller = "BusinessCards"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Domain.Helper.ApiResponse`1[Domain.Helper.Pagination`1[Application.DTOs.BusinessCardDto]]]] GetAll(Domain.Helper.BusinessCardParams) on controller Api.Controllers.BusinessCardsController (Api).
+2025-11-04 09:51:47.365 +03:00 [INF] Executed DbCommand (28ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [BusinessCards] AS [b]
+2025-11-04 09:51:47.382 +03:00 [INF] Executed DbCommand (7ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[Address], [b].[DateOfBirth], [b].[Email], [b].[Gender], [b].[Name], [b].[Phone], [b].[PhotoBase64], [b].[PhotoSizeBytes]
+FROM [BusinessCards] AS [b]
+ORDER BY [b].[Name]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_0 ROWS ONLY
+2025-11-04 09:51:47.392 +03:00 [INF] Executing OkObjectResult, writing value of type 'Domain.Helper.ApiResponse`1[[Domain.Helper.Pagination`1[[Application.DTOs.BusinessCardDto, Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-11-04 09:51:47.398 +03:00 [INF] Executed action Api.Controllers.BusinessCardsController.GetAll (Api) in 1382.3636ms
+2025-11-04 09:51:47.405 +03:00 [INF] Executed endpoint 'Api.Controllers.BusinessCardsController.GetAll (Api)'
+2025-11-04 09:51:47.409 +03:00 [INF] HTTP GET /api/BusinessCards responded 200 in 1498.3866 ms
+2025-11-04 09:51:47.426 +03:00 [INF] Request finished HTTP/1.1 GET https://localhost:7261/api/BusinessCards?pageNumber=2&pageSize=10 - 200 null application/json; charset=utf-8 1529.6701ms
+2025-11-04 09:51:57.117 +03:00 [INF] Request starting HTTP/1.1 DELETE https://localhost:7261/api/BusinessCards/c2d704bb-7630-40a4-b286-50ba153410c0 - null 0
+2025-11-04 09:51:57.128 +03:00 [INF] Executing endpoint 'Api.Controllers.BusinessCardsController.Delete (Api)'
+2025-11-04 09:51:57.146 +03:00 [INF] Route matched with {action = "Delete", controller = "BusinessCards"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Delete(System.Guid) on controller Api.Controllers.BusinessCardsController (Api).
+2025-11-04 09:51:58.905 +03:00 [INF] Executed DbCommand (9ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[Id], [b].[Address], [b].[DateOfBirth], [b].[Email], [b].[Gender], [b].[Name], [b].[Phone], [b].[PhotoBase64], [b].[PhotoSizeBytes]
+FROM [BusinessCards] AS [b]
+WHERE [b].[Id] = @__get_Item_0
+2025-11-04 09:51:58.967 +03:00 [INF] Executed DbCommand (12ms) [Parameters=[@p0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+DELETE FROM [BusinessCards]
+OUTPUT 1
+WHERE [Id] = @p0;
+2025-11-04 09:51:58.997 +03:00 [INF] Executing OkObjectResult, writing value of type 'Domain.Helper.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-11-04 09:51:59.009 +03:00 [INF] Executed action Api.Controllers.BusinessCardsController.Delete (Api) in 1853.8462ms
+2025-11-04 09:51:59.018 +03:00 [INF] Executed endpoint 'Api.Controllers.BusinessCardsController.Delete (Api)'
+2025-11-04 09:51:59.028 +03:00 [INF] HTTP DELETE /api/BusinessCards/c2d704bb-7630-40a4-b286-50ba153410c0 responded 200 in 1900.3860 ms
+2025-11-04 09:51:59.045 +03:00 [INF] Request finished HTTP/1.1 DELETE https://localhost:7261/api/BusinessCards/c2d704bb-7630-40a4-b286-50ba153410c0 - 200 null application/json; charset=utf-8 1927.9434ms
+2025-11-04 09:51:59.065 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:7261/api/BusinessCards?pageNumber=2&pageSize=10 - null null
+2025-11-04 09:51:59.079 +03:00 [INF] Executing endpoint 'Api.Controllers.BusinessCardsController.GetAll (Api)'
+2025-11-04 09:51:59.084 +03:00 [INF] Route matched with {action = "GetAll", controller = "BusinessCards"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Domain.Helper.ApiResponse`1[Domain.Helper.Pagination`1[Application.DTOs.BusinessCardDto]]]] GetAll(Domain.Helper.BusinessCardParams) on controller Api.Controllers.BusinessCardsController (Api).
+2025-11-04 09:51:59.798 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [BusinessCards] AS [b]
+2025-11-04 09:51:59.821 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[Address], [b].[DateOfBirth], [b].[Email], [b].[Gender], [b].[Name], [b].[Phone], [b].[PhotoBase64], [b].[PhotoSizeBytes]
+FROM [BusinessCards] AS [b]
+ORDER BY [b].[Name]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_0 ROWS ONLY
+2025-11-04 09:51:59.836 +03:00 [INF] Executing OkObjectResult, writing value of type 'Domain.Helper.ApiResponse`1[[Domain.Helper.Pagination`1[[Application.DTOs.BusinessCardDto, Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-11-04 09:51:59.846 +03:00 [INF] Executed action Api.Controllers.BusinessCardsController.GetAll (Api) in 751.968ms
+2025-11-04 09:51:59.851 +03:00 [INF] Executed endpoint 'Api.Controllers.BusinessCardsController.GetAll (Api)'
+2025-11-04 09:51:59.856 +03:00 [INF] HTTP GET /api/BusinessCards responded 200 in 776.9645 ms
+2025-11-04 09:51:59.866 +03:00 [INF] Request finished HTTP/1.1 GET https://localhost:7261/api/BusinessCards?pageNumber=2&pageSize=10 - 200 null application/json; charset=utf-8 801.3689ms
+2025-11-04 09:52:04.368 +03:00 [INF] Request starting HTTP/1.1 DELETE https://localhost:7261/api/BusinessCards/6e49003d-29ab-4021-8c82-8edfe6d82ed8 - null 0
+2025-11-04 09:52:04.379 +03:00 [INF] Executing endpoint 'Api.Controllers.BusinessCardsController.Delete (Api)'
+2025-11-04 09:52:04.384 +03:00 [INF] Route matched with {action = "Delete", controller = "BusinessCards"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Delete(System.Guid) on controller Api.Controllers.BusinessCardsController (Api).
+2025-11-04 09:52:05.545 +03:00 [INF] Executed DbCommand (5ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[Id], [b].[Address], [b].[DateOfBirth], [b].[Email], [b].[Gender], [b].[Name], [b].[Phone], [b].[PhotoBase64], [b].[PhotoSizeBytes]
+FROM [BusinessCards] AS [b]
+WHERE [b].[Id] = @__get_Item_0
+2025-11-04 09:52:05.569 +03:00 [INF] Executed DbCommand (5ms) [Parameters=[@p0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+DELETE FROM [BusinessCards]
+OUTPUT 1
+WHERE [Id] = @p0;
+2025-11-04 09:52:05.579 +03:00 [INF] Executing OkObjectResult, writing value of type 'Domain.Helper.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-11-04 09:52:05.585 +03:00 [INF] Executed action Api.Controllers.BusinessCardsController.Delete (Api) in 1191.0234ms
+2025-11-04 09:52:05.591 +03:00 [INF] Executed endpoint 'Api.Controllers.BusinessCardsController.Delete (Api)'
+2025-11-04 09:52:05.595 +03:00 [INF] HTTP DELETE /api/BusinessCards/6e49003d-29ab-4021-8c82-8edfe6d82ed8 responded 200 in 1216.5818 ms
+2025-11-04 09:52:05.603 +03:00 [INF] Request finished HTTP/1.1 DELETE https://localhost:7261/api/BusinessCards/6e49003d-29ab-4021-8c82-8edfe6d82ed8 - 200 null application/json; charset=utf-8 1235.4373ms
+2025-11-04 09:52:05.660 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:7261/api/BusinessCards?pageNumber=2&pageSize=10 - null null
+2025-11-04 09:52:05.681 +03:00 [INF] Executing endpoint 'Api.Controllers.BusinessCardsController.GetAll (Api)'
+2025-11-04 09:52:05.688 +03:00 [INF] Route matched with {action = "GetAll", controller = "BusinessCards"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Domain.Helper.ApiResponse`1[Domain.Helper.Pagination`1[Application.DTOs.BusinessCardDto]]]] GetAll(Domain.Helper.BusinessCardParams) on controller Api.Controllers.BusinessCardsController (Api).
+2025-11-04 09:52:06.491 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [BusinessCards] AS [b]
+2025-11-04 09:52:06.593 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[Address], [b].[DateOfBirth], [b].[Email], [b].[Gender], [b].[Name], [b].[Phone], [b].[PhotoBase64], [b].[PhotoSizeBytes]
+FROM [BusinessCards] AS [b]
+ORDER BY [b].[Name]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_0 ROWS ONLY
+2025-11-04 09:52:06.606 +03:00 [INF] Executing OkObjectResult, writing value of type 'Domain.Helper.ApiResponse`1[[Domain.Helper.Pagination`1[[Application.DTOs.BusinessCardDto, Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-11-04 09:52:06.611 +03:00 [INF] Executed action Api.Controllers.BusinessCardsController.GetAll (Api) in 914.2527ms
+2025-11-04 09:52:06.618 +03:00 [INF] Executed endpoint 'Api.Controllers.BusinessCardsController.GetAll (Api)'
+2025-11-04 09:52:06.629 +03:00 [INF] HTTP GET /api/BusinessCards responded 200 in 947.8250 ms
+2025-11-04 09:52:06.654 +03:00 [INF] Request finished HTTP/1.1 GET https://localhost:7261/api/BusinessCards?pageNumber=2&pageSize=10 - 200 null application/json; charset=utf-8 994.3774ms
+2025-11-04 09:52:10.146 +03:00 [INF] Request starting HTTP/1.1 DELETE https://localhost:7261/api/BusinessCards/06d04d73-308b-48f9-b8c8-f46d7384f3ff - null 0
+2025-11-04 09:52:10.165 +03:00 [INF] Executing endpoint 'Api.Controllers.BusinessCardsController.Delete (Api)'
+2025-11-04 09:52:10.171 +03:00 [INF] Route matched with {action = "Delete", controller = "BusinessCards"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Delete(System.Guid) on controller Api.Controllers.BusinessCardsController (Api).
+2025-11-04 09:52:11.337 +03:00 [INF] Executed DbCommand (5ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[Id], [b].[Address], [b].[DateOfBirth], [b].[Email], [b].[Gender], [b].[Name], [b].[Phone], [b].[PhotoBase64], [b].[PhotoSizeBytes]
+FROM [BusinessCards] AS [b]
+WHERE [b].[Id] = @__get_Item_0
+2025-11-04 09:52:11.358 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[@p0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+DELETE FROM [BusinessCards]
+OUTPUT 1
+WHERE [Id] = @p0;
+2025-11-04 09:52:11.369 +03:00 [INF] Executing OkObjectResult, writing value of type 'Domain.Helper.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-11-04 09:52:11.376 +03:00 [INF] Executed action Api.Controllers.BusinessCardsController.Delete (Api) in 1193.7297ms
+2025-11-04 09:52:11.384 +03:00 [INF] Executed endpoint 'Api.Controllers.BusinessCardsController.Delete (Api)'
+2025-11-04 09:52:11.392 +03:00 [INF] HTTP DELETE /api/BusinessCards/06d04d73-308b-48f9-b8c8-f46d7384f3ff responded 200 in 1226.8017 ms
+2025-11-04 09:52:11.405 +03:00 [INF] Request finished HTTP/1.1 DELETE https://localhost:7261/api/BusinessCards/06d04d73-308b-48f9-b8c8-f46d7384f3ff - 200 null application/json; charset=utf-8 1259.2792ms
+2025-11-04 09:52:11.427 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:7261/api/BusinessCards?pageNumber=2&pageSize=10 - null null
+2025-11-04 09:52:11.449 +03:00 [INF] Executing endpoint 'Api.Controllers.BusinessCardsController.GetAll (Api)'
+2025-11-04 09:52:11.456 +03:00 [INF] Route matched with {action = "GetAll", controller = "BusinessCards"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Domain.Helper.ApiResponse`1[Domain.Helper.Pagination`1[Application.DTOs.BusinessCardDto]]]] GetAll(Domain.Helper.BusinessCardParams) on controller Api.Controllers.BusinessCardsController (Api).
+2025-11-04 09:52:11.680 +03:00 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [BusinessCards] AS [b]
+2025-11-04 09:52:11.738 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[Address], [b].[DateOfBirth], [b].[Email], [b].[Gender], [b].[Name], [b].[Phone], [b].[PhotoBase64], [b].[PhotoSizeBytes]
+FROM [BusinessCards] AS [b]
+ORDER BY [b].[Name]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_0 ROWS ONLY
+2025-11-04 09:52:11.751 +03:00 [INF] Executing OkObjectResult, writing value of type 'Domain.Helper.ApiResponse`1[[Domain.Helper.Pagination`1[[Application.DTOs.BusinessCardDto, Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-11-04 09:52:11.760 +03:00 [INF] Executed action Api.Controllers.BusinessCardsController.GetAll (Api) in 287.1321ms
+2025-11-04 09:52:11.771 +03:00 [INF] Executed endpoint 'Api.Controllers.BusinessCardsController.GetAll (Api)'
+2025-11-04 09:52:11.779 +03:00 [INF] HTTP GET /api/BusinessCards responded 200 in 330.0921 ms
+2025-11-04 09:52:11.790 +03:00 [INF] Request finished HTTP/1.1 GET https://localhost:7261/api/BusinessCards?pageNumber=2&pageSize=10 - 200 null application/json; charset=utf-8 362.3906ms
+2025-11-04 09:52:15.170 +03:00 [INF] Request starting HTTP/1.1 DELETE https://localhost:7261/api/BusinessCards/6c6b7f1b-2c97-420f-8404-c9811d839c30 - null 0
+2025-11-04 09:52:15.186 +03:00 [INF] Executing endpoint 'Api.Controllers.BusinessCardsController.Delete (Api)'
+2025-11-04 09:52:15.192 +03:00 [INF] Route matched with {action = "Delete", controller = "BusinessCards"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Delete(System.Guid) on controller Api.Controllers.BusinessCardsController (Api).
+2025-11-04 09:52:18.288 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[Id], [b].[Address], [b].[DateOfBirth], [b].[Email], [b].[Gender], [b].[Name], [b].[Phone], [b].[PhotoBase64], [b].[PhotoSizeBytes]
+FROM [BusinessCards] AS [b]
+WHERE [b].[Id] = @__get_Item_0
+2025-11-04 09:52:18.310 +03:00 [INF] Executed DbCommand (9ms) [Parameters=[@p0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+DELETE FROM [BusinessCards]
+OUTPUT 1
+WHERE [Id] = @p0;
+2025-11-04 09:52:18.322 +03:00 [INF] Executing OkObjectResult, writing value of type 'Domain.Helper.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-11-04 09:52:18.330 +03:00 [INF] Executed action Api.Controllers.BusinessCardsController.Delete (Api) in 3127.5372ms
+2025-11-04 09:52:18.335 +03:00 [INF] Executed endpoint 'Api.Controllers.BusinessCardsController.Delete (Api)'
+2025-11-04 09:52:18.343 +03:00 [INF] HTTP DELETE /api/BusinessCards/6c6b7f1b-2c97-420f-8404-c9811d839c30 responded 200 in 3157.3449 ms
+2025-11-04 09:52:18.359 +03:00 [INF] Request finished HTTP/1.1 DELETE https://localhost:7261/api/BusinessCards/6c6b7f1b-2c97-420f-8404-c9811d839c30 - 200 null application/json; charset=utf-8 3188.8311ms
+2025-11-04 09:52:18.377 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:7261/api/BusinessCards?pageNumber=2&pageSize=10 - null null
+2025-11-04 09:52:18.388 +03:00 [INF] Executing endpoint 'Api.Controllers.BusinessCardsController.GetAll (Api)'
+2025-11-04 09:52:18.393 +03:00 [INF] Route matched with {action = "GetAll", controller = "BusinessCards"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Domain.Helper.ApiResponse`1[Domain.Helper.Pagination`1[Application.DTOs.BusinessCardDto]]]] GetAll(Domain.Helper.BusinessCardParams) on controller Api.Controllers.BusinessCardsController (Api).
+2025-11-04 09:52:18.936 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [BusinessCards] AS [b]
+2025-11-04 09:52:18.955 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[Address], [b].[DateOfBirth], [b].[Email], [b].[Gender], [b].[Name], [b].[Phone], [b].[PhotoBase64], [b].[PhotoSizeBytes]
+FROM [BusinessCards] AS [b]
+ORDER BY [b].[Name]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_0 ROWS ONLY
+2025-11-04 09:52:18.965 +03:00 [INF] Executing OkObjectResult, writing value of type 'Domain.Helper.ApiResponse`1[[Domain.Helper.Pagination`1[[Application.DTOs.BusinessCardDto, Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-11-04 09:52:19.064 +03:00 [INF] Executed action Api.Controllers.BusinessCardsController.GetAll (Api) in 664.6441ms
+2025-11-04 09:52:19.076 +03:00 [INF] Executed endpoint 'Api.Controllers.BusinessCardsController.GetAll (Api)'
+2025-11-04 09:52:19.083 +03:00 [INF] HTTP GET /api/BusinessCards responded 200 in 694.8269 ms
+2025-11-04 09:52:19.110 +03:00 [INF] Request finished HTTP/1.1 GET https://localhost:7261/api/BusinessCards?pageNumber=2&pageSize=10 - 200 null application/json; charset=utf-8 733.3831ms
+2025-11-04 09:52:24.282 +03:00 [INF] Request starting HTTP/1.1 DELETE https://localhost:7261/api/BusinessCards/47e9ad8e-4353-40bd-89dd-eb465cceb643 - null 0
+2025-11-04 09:52:24.308 +03:00 [INF] Executing endpoint 'Api.Controllers.BusinessCardsController.Delete (Api)'
+2025-11-04 09:52:24.313 +03:00 [INF] Route matched with {action = "Delete", controller = "BusinessCards"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Delete(System.Guid) on controller Api.Controllers.BusinessCardsController (Api).
+2025-11-04 09:52:24.339 +03:00 [INF] Executed DbCommand (10ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[Id], [b].[Address], [b].[DateOfBirth], [b].[Email], [b].[Gender], [b].[Name], [b].[Phone], [b].[PhotoBase64], [b].[PhotoSizeBytes]
+FROM [BusinessCards] AS [b]
+WHERE [b].[Id] = @__get_Item_0
+2025-11-04 09:52:24.362 +03:00 [INF] Executed DbCommand (6ms) [Parameters=[@p0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+DELETE FROM [BusinessCards]
+OUTPUT 1
+WHERE [Id] = @p0;
+2025-11-04 09:52:24.375 +03:00 [INF] Executing OkObjectResult, writing value of type 'Domain.Helper.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-11-04 09:52:24.388 +03:00 [INF] Executed action Api.Controllers.BusinessCardsController.Delete (Api) in 66.0767ms
+2025-11-04 09:52:24.399 +03:00 [INF] Executed endpoint 'Api.Controllers.BusinessCardsController.Delete (Api)'
+2025-11-04 09:52:24.404 +03:00 [INF] HTTP DELETE /api/BusinessCards/47e9ad8e-4353-40bd-89dd-eb465cceb643 responded 200 in 95.3535 ms
+2025-11-04 09:52:24.417 +03:00 [INF] Request finished HTTP/1.1 DELETE https://localhost:7261/api/BusinessCards/47e9ad8e-4353-40bd-89dd-eb465cceb643 - 200 null application/json; charset=utf-8 135.5158ms
+2025-11-04 09:52:24.440 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:7261/api/BusinessCards?pageNumber=2&pageSize=10 - null null
+2025-11-04 09:52:24.470 +03:00 [INF] Executing endpoint 'Api.Controllers.BusinessCardsController.GetAll (Api)'
+2025-11-04 09:52:24.478 +03:00 [INF] Route matched with {action = "GetAll", controller = "BusinessCards"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Domain.Helper.ApiResponse`1[Domain.Helper.Pagination`1[Application.DTOs.BusinessCardDto]]]] GetAll(Domain.Helper.BusinessCardParams) on controller Api.Controllers.BusinessCardsController (Api).
+2025-11-04 09:52:25.574 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [BusinessCards] AS [b]
+2025-11-04 09:52:25.597 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[Address], [b].[DateOfBirth], [b].[Email], [b].[Gender], [b].[Name], [b].[Phone], [b].[PhotoBase64], [b].[PhotoSizeBytes]
+FROM [BusinessCards] AS [b]
+ORDER BY [b].[Name]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_0 ROWS ONLY
+2025-11-04 09:52:25.609 +03:00 [INF] Executing OkObjectResult, writing value of type 'Domain.Helper.ApiResponse`1[[Domain.Helper.Pagination`1[[Application.DTOs.BusinessCardDto, Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-11-04 09:52:25.615 +03:00 [INF] Executed action Api.Controllers.BusinessCardsController.GetAll (Api) in 1122.1652ms
+2025-11-04 09:52:25.632 +03:00 [INF] Executed endpoint 'Api.Controllers.BusinessCardsController.GetAll (Api)'
+2025-11-04 09:52:25.643 +03:00 [INF] HTTP GET /api/BusinessCards responded 200 in 1172.9183 ms
+2025-11-04 09:52:25.654 +03:00 [INF] Request finished HTTP/1.1 GET https://localhost:7261/api/BusinessCards?pageNumber=2&pageSize=10 - 200 null application/json; charset=utf-8 1214.8476ms
